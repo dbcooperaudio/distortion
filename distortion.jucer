@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="EKi0Ks" name="distortion" projectType="audioplug" jucerVersion="5.4.7"
+              projectLineFeed="&#10;" companyName="dbcooper" companyCopyright="dbcooper"
+              companyWebsite="https://www.github.com/dbcooperaudio/" pluginFormats="buildAAX,buildAU,buildStandalone,buildVST3"
+              pluginCharacteristicsValue="pluginEditorRequiresKeys" pluginManufacturerCode="DBCP"
+              cppLanguageStandard="17" defines="DONT_SET_USING_JUCE_NAMESPACE=1">
+  <MAINGROUP id="d9yuO5" name="distortion">
+    <GROUP id="{B230999E-E675-7774-6BC0-D9752BE805F0}" name="Source">
+      <FILE id="fapc3f" name="Plugin.cpp" compile="1" resource="0" file="Source/Plugin.cpp"/>
+      <FILE id="vqtTNp" name="Plugin.hpp" compile="0" resource="0" file="Source/Plugin.hpp"/>
+      <FILE id="qgFroH" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="ThsaAk" name="PluginEditor.hpp" compile="0" resource="0"
+            file="Source/PluginEditor.hpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" recommendedWarnings="LLVM"/>
+        <CONFIGURATION isDebug="0" name="Release" recommendedWarnings="LLVM"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_core" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_data_structures" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_events" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_graphics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="Modules/juce/modules"/>
+        <MODULEPATH id="dbcooper" path="Modules/"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+    <VS2019 targetFolder="Builds/VisualStudio2019">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_core" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_data_structures" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_events" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_graphics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="Modules/juce/modules"/>
+        <MODULEPATH id="dbcooper" path="Modules/"/>
+      </MODULEPATHS>
+    </VS2019>
+    <VS2017 targetFolder="Builds/VisualStudio2017">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_core" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_data_structures" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_events" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_graphics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="Modules/juce/modules"/>
+        <MODULEPATH id="dbcooper" path="Modules/"/>
+      </MODULEPATHS>
+    </VS2017>
+    <VS2015 targetFolder="Builds/VisualStudio2015">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_core" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_data_structures" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_events" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_graphics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="Modules/juce/modules"/>
+        <MODULEPATH id="dbcooper" path="Modules/"/>
+      </MODULEPATHS>
+    </VS2015>
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" recommendedWarnings="GCC-7"/>
+        <CONFIGURATION isDebug="0" name="Release" recommendedWarnings="GCC-7"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_core" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_data_structures" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_events" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_graphics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="Modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="Modules/juce/modules"/>
+        <MODULEPATH id="dbcooper" path="Modules/"/>
+      </MODULEPATHS>
+    </LINUX_MAKE>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="dbcooper" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <OSX/>
+  </LIVE_SETTINGS>
+  <JUCEOPTIONS JUCE_VST3_CAN_REPLACE_VST2="0" JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+</JUCERPROJECT>

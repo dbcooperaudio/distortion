@@ -1,0 +1,6 @@
+[submodule "Modules/juce"]
+	path = Modules/juce
+	url = https://github.com/WeAreROLI/JUCE.git
+[submodule "Modules/dbcooper"]
+	path = Modules/dbcooper
+	url = git@github.com:dbcooperaudio/dbcooper.git
