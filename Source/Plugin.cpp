@@ -2,9 +2,25 @@
 #include "PluginEditor.hpp"
 
 
+const juce::StringRef Plugin::ParamIds::Input       ("input");
+const juce::StringRef Plugin::ParamIds::Output      ("output");
+const juce::StringRef Plugin::ParamIds::Brightness  ("brightness");
+const juce::StringRef Plugin::ParamIds::Drive       ("drive");
+const juce::StringRef Plugin::ParamIds::Overdrive   ("overdrive");
+const juce::StringRef Plugin::ParamIds::InputMeter  ("input_meter");
+const juce::StringRef Plugin::ParamIds::OutputMeter ("output_meter");
+
+
 Plugin::Plugin() : dB::Plugin(createDefaultIO(), createParameters())
 {
+    params.input       = state.getRawParameterValue(ParamIds::Input);
+    params.output      = state.getRawParameterValue(ParamIds::Output);
+    params.brightness  = state.getRawParameterValue(ParamIds::Brightness);
+    params.drive       = state.getRawParameterValue(ParamIds::Drive);
+    params.overdrive   = state.getRawParameterValue(ParamIds::Overdrive);
 
+    params.inputMeter  = state.getParameter(ParamIds::InputMeter);
+    params.outputMeter = state.getParameter(ParamIds::OutputMeter);
 }
 
 
@@ -27,7 +43,46 @@ Plugin::createDefaultIO()
 juce::AudioProcessorValueTreeState::ParameterLayout
 Plugin::createParameters()
 {
-    return {};
+    return {
+        std::make_unique<juce::AudioParameterFloat>(
+            ParamIds::Input, "Input",
+            juce::NormalisableRange<float>(-10.0f, 10.0f), 0.0f,
+            "dB",
+            juce::AudioProcessorParameter::inputGain
+        ),
+        std::make_unique<juce::AudioParameterFloat>(
+            ParamIds::Output, "Output",
+            juce::NormalisableRange<float>(-10.0f, 10.0f), 0.0f,
+            "dB",
+            juce::AudioProcessorParameter::outputGain
+        ),
+        std::make_unique<juce::AudioParameterFloat>(
+            ParamIds::Brightness, "Brightness",
+            juce::NormalisableRange<float>(0.0f, 1.0f), 0.5f,
+            "%"
+        ),
+        std::make_unique<juce::AudioParameterFloat>(
+            ParamIds::Drive, "Drive",
+            juce::NormalisableRange<float>(0.0f, 1.0f), 0.0f,
+            "%"
+        ),
+        std::make_unique<juce::AudioParameterBool>(
+            ParamIds::Overdrive, "Overdrive",
+            false
+        ),
+        std::make_unique<juce::AudioParameterFloat>(
+            ParamIds::InputMeter, "Input Meter",
+            juce::NormalisableRange<float>(0.0f, 1.0f), 0.0f,
+            "",
+            juce::AudioProcessorParameter::inputMeter
+        ),
+        std::make_unique<juce::AudioParameterFloat>(
+            ParamIds::OutputMeter, "Output Meter",
+            juce::NormalisableRange<float>(0.0f, 1.0f), 0.0f,
+            "",
+            juce::AudioProcessorParameter::outputMeter
+        )
+    };
 }
 
 
@@ -68,6 +123,12 @@ Plugin::processBlock(
 
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear(i, 0, buffer.getNumSamples());
+
+    buffer.applyGain(juce::Decibels::decibelsToGain(params.input->load()));
+
+    // ...
+
+    buffer.applyGain(juce::Decibels::decibelsToGain(params.output->load()));
 }
 
 
@@ -90,7 +151,7 @@ Plugin::hasEditor() const
 juce::AudioProcessorEditor*
 Plugin::createEditor()
 {
-    return new PluginEditor(*this);
+    return new juce::GenericAudioProcessorEditor(*this);
 }
 
 

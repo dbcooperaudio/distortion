@@ -4,8 +4,19 @@
 
 class Plugin : public dB::Plugin
 {
-public:
     using ParameterLayout = juce::AudioProcessorValueTreeState::ParameterLayout;
+
+public:
+    struct ParamIds
+    {
+        static const juce::StringRef Input;
+        static const juce::StringRef Output;
+        static const juce::StringRef Brightness;
+        static const juce::StringRef Drive;
+        static const juce::StringRef Overdrive;
+        static const juce::StringRef InputMeter;
+        static const juce::StringRef OutputMeter;
+    };
 
     Plugin();
     ~Plugin() = default;
@@ -24,6 +35,18 @@ public:
 
     juce::AudioProcessorEditor* createEditor() override;
     bool hasEditor() const override;
+
+    struct
+    {
+        std::atomic<float>* input;
+        std::atomic<float>* output;
+        std::atomic<float>* brightness;
+        std::atomic<float>* drive;
+        std::atomic<float>* overdrive;
+
+        juce::RangedAudioParameter* inputMeter;
+        juce::RangedAudioParameter* outputMeter;
+    } params;
 
 private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(Plugin)
